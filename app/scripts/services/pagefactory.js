@@ -8,6 +8,14 @@
  * Service in the yoscratchApp.
  */
 angular.module('yoscratchApp')
-  .service('pageFactory', function pageFactory() {
-    // AngularJS will instantiate a singleton by calling "new" on this function
-  });
+    .service('pageFactory',['sectionFactory',function pageFactory(sectionFactory) {
+        pageFactory.create = function(){
+            return {
+                'title'     : 'Foo is the new black',
+                'url'       : 'foo.html',
+                'sections'  : [sectionFactory.create()]
+            };
+        };
+
+        return pageFactory;
+    }]);

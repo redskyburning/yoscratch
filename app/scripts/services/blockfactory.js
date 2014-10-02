@@ -9,5 +9,12 @@
  */
 angular.module('yoscratchApp')
   .service('blockFactory', function blockFactory() {
-    // AngularJS will instantiate a singleton by calling "new" on this function
+        sectionFactory.create = function(){
+            var sect = {
+                'blocks'    : []
+            };
+            return sect;
+        };
+
+        return blockFactory;
   });
