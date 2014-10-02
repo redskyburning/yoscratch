@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: AboutCtrl', function () {
+describe('Controller: SectioncontrollerCtrl', function () {
 
   // load the controller's module
   beforeEach(module('yoscratchApp'));
 
-  var AboutCtrl,
+  var SectioncontrollerCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    AboutCtrl = $controller('AboutCtrl', {
+    SectioncontrollerCtrl = $controller('SectioncontrollerCtrl', {
       $scope: scope
     });
   }));

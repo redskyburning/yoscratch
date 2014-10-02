@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name yoscratchApp.controller:AboutCtrl
+ * @name yoscratchApp.controller:SectioncontrollerCtrl
  * @description
- * # AboutCtrl
+ * # SectioncontrollerCtrl
  * Controller of the yoscratchApp
  */
 angular.module('yoscratchApp')
-  .controller('AboutCtrl', function ($scope) {
+  .controller('SectioncontrollerCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
