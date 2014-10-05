@@ -1,0 +1,9 @@
+<figure class="sd-figure-image">
+    <a class="sd-figure-image-link" href="{{ block.fields.url.link.href }}">
+        <img ng-render-image ng-model="block.fields.image" />
+    </a>
+    <figcaption ng-if="block.fields.attribution || block.fields.caption">
+        <div class="sd-media-attribution" ng-if="block.fields.attribution" ng-render-inline ng-model="block.fields.attribution"></div>
+        <div class="sd-media-caption" ng-if="block.fields.caption" ng-render-inline ng-model="block.fields.caption"></div>
+    </figcaption>
+</figure>

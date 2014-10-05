@@ -253,7 +253,7 @@
                             "field_type"    : "embedded_image",
                             "payload"       : {
                                 "internal"  : false,
-                                "src"       : "http://placekitten.com/560/400",
+                                "src"       : "http://placekitten.com/800/450",
                                 "width"     : 560,
                                 "height"    : 400,
                                 "fX"        : 0.5,

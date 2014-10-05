@@ -1,0 +1,21 @@
+<div class="sd-media">
+    <figure class="sd-media-image">
+        <a class="sd-media-image-link" href="{{ block.fields.url.link.href }}">
+            <img ng-render-image ng-model="block.fields.image" />
+        </a>
+        <figcaption ng-if="block.fields.caption || block.fields.attribution">
+            <div class="sd-media-attribution" ng-if="block.fields.attribution" ng-render-inline ng-model="block.fields.attribution"></div>
+            <div class="sd-media-caption" ng-if="block.fields.caption" ng-render-inline ng-model="block.fields.caption"></div>
+        </figcaption>
+    </figure>
+    <div class="sd-media-text">
+        <div class="sd-media-text-title">
+            <a class="sd-media-image-link" href="{{ block.fields.url.link.href }}" ng-render-inline ng-model="block.fields.title"></a>
+        </div>
+        <div class="sd-media-text-title" ng-if="block.fields.subtitle" ng-render-inline ng-model="block.fields.subtitle"></div>
+        <div class="sd-media-text-body" ng-if="block.fields.body" ng-render-inline ng-model="block.fields.body"></div>
+        <div class="sd-media-text-link" ng-if="block.fields.linkText">
+            <a class="sd-media-image-link" href="{{ block.fields.url.link.href }}" ng-render-inline ng-model="block.fields.body"></a>
+        </div>
+    </div>
+</div>

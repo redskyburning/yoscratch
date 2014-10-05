@@ -7,9 +7,9 @@
  * # ngBlock
  */
 angular.module('yoscratchApp')
-    .directive('ngBlock', ['$compile', '$http', '$templateCache', function() {
+    .directive('ngBlock', ['blockService', function() {
         return {
-            template: '<ng-include src="getTemplateUrl()"/>',
+            template: '<div ng-include src="getTemplateUrl()"/>',
             scope: {
                 block: '=ngModel'
             },
@@ -17,8 +17,8 @@ angular.module('yoscratchApp')
             controller: function($scope) {
                 //function used on the ng-include to resolve the template
                 $scope.getTemplateUrl = function() {
-                    //basic handling
-                    return 'views/blocks/' + $scope.block.blockType + '.html';
+                    var hero = $scope.block.isHero ? '-hero' : '';
+                    return 'views/blocks/' + $scope.block.blockType + hero + '.html';
                 };
             }
         };

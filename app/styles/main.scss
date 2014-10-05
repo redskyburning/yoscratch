@@ -90,3 +90,21 @@ body {
     border-bottom: 0;
   }
 }
+
+.style-bold {
+   font-weight:bold;
+ }
+
+.style-italic {
+  font-style:italic;
+}
+
+.style-strike {
+  text-decoration:line-through;
+}
+
+.style-underline {
+  text-decoration:underline;
+}
+
+@import 'blocks.scss';
