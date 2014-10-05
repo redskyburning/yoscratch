@@ -11,11 +11,10 @@
     },
     "sections"      : [
         {
-            "meta"      : "stuff", // I'm sure there's info that goes here, not sure what now.
+            "meta"      : "stuff",
             "blocks"    : [
                 {
-                    "block_type"    : "headline",
-                    // The meaning of isHero depends on the context. Here it signals that this headline is the primary heading for the section, and should be an h1 rather than an h2.
+                    "blockType"    : "headline",
                     "isHero"        : true,
                     "fields"        : {
                         "head"      : {
@@ -49,7 +48,7 @@
                     }
                 },
                 {
-                    "block_type"    : "paragraph",
+                    "blockType"    : "paragraph",
                     "isHero"        : false,
                     "fields"        : {
                         "body"      : {
@@ -116,7 +115,7 @@
                     }
                 },
                 {
-                    "block_type"    : "media",
+                    "blockType"    : "media",
                     "isHero"        : false,
                     "fields"        : {
                         "image"     : {
@@ -151,7 +150,7 @@
                                 }
                             ]
                         },
-                        "caption"   : { // The image service should return a caption, this should allow it to be overridden.
+                        "caption"   : {
                             "label"         : "Caption",
                             "required"      : false,
                             "field_type"    : "inline_plain",
@@ -161,7 +160,7 @@
                                 }
                             ]
                         },
-                        "attribution"   : { // The image service should return a attribution
+                        "attribution"   : {
                             "label"         : "Attribution",
                             "required"      : false,
                             "field_type"    : "inline_plain_linkable",
@@ -245,7 +244,7 @@
                     }
                 },
                 {
-                    "block_type"    : "figure",
+                    "blockType"    : "figure",
                     "isHero"        : false,
                     "fields"        : {
                         "image"     : {
@@ -270,7 +269,7 @@
                                 "href"          : "/bar.html"
                             }
                         },
-                        "caption"   : { // The image service should return a caption, this should allow it to be overridden.
+                        "caption"   : {
                             "label"         : "Caption",
                             "required"      : false,
                             "field_type"    : "inline_plain",
@@ -280,7 +279,7 @@
                                 }
                             ]
                         },
-                        "attribution"   : { // The image service should return a attribution
+                        "attribution"   : {
                             "label"         : "Attribution",
                             "required"      : false,
                             "field_type"    : "inline_plain_linkable",
@@ -313,8 +312,8 @@
             },
             "blocks"        : [
                 {
-                    "block_type"    : "product",
-                    "isHero"          : true, // The meaning of isHero depends on the context.
+                    "blockType"    : "product",
+                    "isHero"          : true,
                     "fields"        : {
                         "embedded_product"  : {
 

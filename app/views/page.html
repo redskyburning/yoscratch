@@ -1,0 +1,9 @@
+<article>
+    <section ng-repeat="section in page.sections">
+        Section
+        <div ng-repeat="block in section.blocks">
+            <pre>{{ block.blockType|json }}</pre>
+            <ng-block data="{blockType:'foo'}" ng-model="block"></ng-block>
+        </div>
+    </section>
+</article>
