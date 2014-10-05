@@ -2,16 +2,16 @@
 
 /**
  * @ngdoc directive
- * @name yoscratchApp.directive:ngBlock
+ * @name yoscratchApp.directive:sdBlock
  * @description
- * # ngBlock
+ * # sdBlock
  */
 angular.module('yoscratchApp')
-    .directive('ngBlock', ['blockService', function() {
+    .directive('sdBlock', ['blockService', function() {
         return {
             template: '<div ng-include src="getTemplateUrl()"/>',
             scope: {
-                block: '=ngModel'
+                block: '=sdBlock'
             },
             restrict: 'E',
             controller: function($scope) {

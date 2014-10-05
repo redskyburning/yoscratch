@@ -2,18 +2,18 @@
 
 /**
  * @ngdoc directive
- * @name yoscratchApp.directive:ngRenderImage
+ * @name yoscratchApp.directive:sdRenderImage
  * @description
- * # ngRenderImage
+ * # sdRenderImage
  */
 angular.module('yoscratchApp')
-    .directive('ngRenderImage', function () {
+    .directive('sdRenderImage', function () {
         return {
             template: '<div></div>',
             restrict: 'A',
             replace:true,
             scope: {
-                field: '=ngModel'
+                field: '=sdImage'
             },
             link: function postLink(scope, element){
                 var payload = scope.field.payload;

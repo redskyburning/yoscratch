@@ -2,17 +2,17 @@
 
 /**
  * @ngdoc directive
- * @name yoscratchApp.directive:ngRenderInline
+ * @name yoscratchApp.directive:sdRenderInline
  * @description
- * # ngRenderInline
+ * # sdRenderInline
  */
 angular.module('yoscratchApp')
-    .directive('ngRenderInline', function () {
+    .directive('sdRenderInline', function () {
         return {
             template: '<div></div>',
             restrict: 'A',
             scope: {
-                field: '=ngModel'
+                field: '=sdInline'
             },
             link: function postLink(scope, element){
                 var html = '';
