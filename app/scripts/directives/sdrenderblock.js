@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc directive
- * @name yoscratchApp.directive:sdBlock
+ * @name yoscratchApp.directive:sdRenderBlock
  * @description
- * # sdBlock
+ * # sdRenderBlock
  */
 angular.module('yoscratchApp')
-    .directive('sdBlock', ['blockService', function() {
+    .directive('sdRenderBlock', ['blockService', function() {
         return {
             template: '<div ng-include src="getTemplateUrl()"/>',
             scope: {
@@ -18,7 +18,7 @@ angular.module('yoscratchApp')
                 //function used on the ng-include to resolve the template
                 $scope.getTemplateUrl = function() {
                     var hero = $scope.block.isHero ? '-hero' : '';
-                    return 'views/blocks/' + $scope.block.blockType + hero + '.html';
+                    return 'views/blocks/render/' + $scope.block.blockType + hero + '.html';
                 };
             }
         };

@@ -1,8 +1,12 @@
 <article>
     <section ng-repeat="section in page.sections">
-        Section
         <div ng-repeat="block in section.blocks">
-            <sd-block data="{blockType:'foo'}" sd-block="block"></sd-block>
+            <ng-switch on="mode">
+                <ng-switch when="render">
+                    <sd-render-block sd-block="block" sd-switch-when="render" />
+                    <sd-edit-block sd-block="block" sd-switch-when="edit" />
+                </ng-switch>
+            </ng-switch>
         </div>
     </section>
 </article>

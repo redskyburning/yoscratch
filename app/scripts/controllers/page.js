@@ -10,6 +10,7 @@
 angular.module('yoscratchApp')
     .controller('PageCtrl', function ($scope,$http) {
         $scope.page = {};
+        $scope.mode = 'render';
 
         $http.get('data/page_data.json')
             .success(function(data){

@@ -29,13 +29,14 @@ angular.module('yoscratchApp')
                             'strike'    : false
                         };
                         var link = {};
+                        console.log(link.length);
 
                         angular.extend(style, f.style);
                         angular.extend(link, f.link);
 
                         // Select best tag
                         var tag;
-                        if(link){
+                        if(typeof link.href !== 'undefined'){
                             tag = 'a';
                         } else if(style.bold) {
                             tag = 'strong';
