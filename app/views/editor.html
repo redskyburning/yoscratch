@@ -1,15 +1,10 @@
 <div class="angular-meditor">
     <div class="angular-meditor-toolbar" style="top: {{ position.top }}px; left: {{ position.left }}px" ng-class="{ 'angular-meditor-toolbar--show': showToolbar, 'angular-meditor-toolbar--bottom': position.below }">
-        <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-primary">
-                <input type="checkbox"> B
-            </label>
-            <label class="btn btn-primary">
-                <input type="checkbox"> I
-            </label>
-            <label class="btn btn-primary">
-                <input type="checkbox"> U
-            </label>
+        <div class="btn-group">
+            <label class="btn btn-primary style-bold" ng-model="styles.bold" btn-checkbox>B</label>
+            <label class="btn btn-primary style-italic" ng-model="styles.italic" btn-checkbox>I</label>
+            <label class="btn btn-primary style-underline" ng-model="styles.underline" btn-checkbox>U</label>
+            <label class="btn btn-primary style-strike" ng-model="styles.strike" btn-checkbox>S</label>
         </div>
     </div>
     <div class="angular-meditor-content" ng-transclude></div>
