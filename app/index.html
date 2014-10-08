@@ -1,6 +1,6 @@
 <!doctype html>
 <html class="no-js">
-  <head>
+<head>
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
@@ -12,11 +12,18 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <script src="bower_components/rangy-official/rangy-core.min.js"></script>
+    <script src="bower_components/rangy-official/rangy-classapplier.min.js"></script>
+    <script src="bower_components/rangy-official/rangy-highlighter.min.js"></script>
+    <script src="bower_components/rangy-official/rangy-selectionsaverestore.min.js"></script>
+    <script src="bower_components/rangy-official/rangy-serializer.min.js"></script>
+    <script src="bower_components/rangy-official/rangy-textrange.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <!-- endbuild -->
-  </head>
-  <body ng-app="yoscratchApp">
+</head>
+<body ng-app="yoscratchApp">
 
-      <div ng-view=""></div>
+    <div id="app-root-container" ng-view=""></div>
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
@@ -27,7 +34,6 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
@@ -50,13 +56,16 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/page.js"></script>
-        <script src="scripts/directives/sdrenderblock.js"></script>
-        <script src="scripts/services/blockservice.js"></script>
-        <script src="scripts/directives/sdrenderinline.js"></script>
-        <script src="scripts/directives/sdrenderimage.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/page.js"></script>
+    <script src="scripts/directives/sdrenderblock.js"></script>
+    <script src="scripts/services/blockservice.js"></script>
+    <script src="scripts/directives/sdrenderinline.js"></script>
+    <script src="scripts/directives/sdrenderimage.js"></script>
+    <script src="scripts/controllers/test.js"></script>
+    <script src="scripts/services/rangyservice.js"></script>
+    <script src="scripts/directives/sdeditable.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

@@ -1,0 +1,52 @@
+$toolbarBackground: #333;
+$toolbarText: #efefef;
+$darken: #3071a9;
+$lighten: #428bca;
+
+.angular-meditor {
+	position: relative;
+
+	.angular-meditor-content {
+
+	}
+}
+
+.angular-meditor-toolbar {
+	position: absolute;
+	z-index: -1;
+	display: block;
+	border: 1px solid $darken;
+	border-radius: .4rem;
+	opacity: 0;
+	//padding: .5rem .7rem;
+	//background:rgba(255,255,255,.9);
+	background:$darken;
+
+	font-size: 16px;
+
+	&:after {
+		position: absolute;
+		bottom: -.6rem;
+		left: 50%;
+		margin-left: -3rem;
+		content: '';
+		display: block;
+		width: 0;
+		height: 0;
+		border-width: .6rem .6rem 0;
+		border-style: solid;
+		border-color: $darken transparent transparent;
+	}
+
+	&.angular-meditor-toolbar--bottom:after {
+		bottom: auto;
+		top: -.6rem;
+		border-width: 0 .6em .6em;
+		border-color: transparent transparent $darken;
+	}
+}
+
+.angular-meditor-toolbar--show {
+	opacity: 1;
+	z-index: 999999;
+}

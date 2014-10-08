@@ -1,0 +1,16 @@
+<div class="angular-meditor">
+    <div class="angular-meditor-toolbar" style="top: {{ position.top }}px; left: {{ position.left }}px" ng-class="{ 'angular-meditor-toolbar--show': showToolbar, 'angular-meditor-toolbar--bottom': position.below }">
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary">
+                <input type="checkbox"> B
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox"> I
+            </label>
+            <label class="btn btn-primary">
+                <input type="checkbox"> U
+            </label>
+        </div>
+    </div>
+    <div class="angular-meditor-content" ng-transclude></div>
+</div>
