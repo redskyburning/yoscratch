@@ -9,11 +9,6 @@
  */
 angular.module('yoscratchApp')
     .controller('CategoryCtrl',['$scope','$routeParams','catalogService','categoryService', function ($scope,$routeParams,catalogService,categoryService) {
-
-        catalogService.get({'id':15},function(data){
-            $scope.categories = data.catalog_id_15.subcategories;
-        });
-
         var setCat = function(id){
             categoryService.get({'id':id}, function(data){
                 $scope.category = data;

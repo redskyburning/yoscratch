@@ -20,6 +20,11 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
 	font-size:1vmin;
+	background:#eee;
+}
+
+html, body, body > div {
+	height:100%;
 }
 
 .root-container {
@@ -27,17 +32,13 @@ body {
 	font-family:$proxima;
 	font-size:1.6rem;
 	line-height:1.43em;
-	background:#eee;
+	//display:flex;
+	//flex-direction:column;
 
 	.category-list, .product-list {
 		overflow-x:none;
 		overflow-y:auto;
 		height:100%;
-	}
-
-	.category-list {
-		flex:0 0 auto;
-		padding:10px;
 	}
 
 	.product-list {

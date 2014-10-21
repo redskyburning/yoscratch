@@ -9,8 +9,8 @@
  * Filter in the yoscratchApp.
  */
 angular.module('yoscratchApp')
-  .filter('prodize', function () {
-    return function (input) {
-      return input.replace('stelladotdevlocal','stelladot');
-    };
-  });
+    .filter('prodize', function () {
+        return function (input) {
+            return input.replace('stelladotdevlocal','stelladot');
+        };
+    });

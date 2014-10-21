@@ -8,19 +8,23 @@
  * Controller of the yoscratchApp
  */
 angular.module('yoscratchApp')
-    .controller('CatalogCtrl',['$scope','$routeParams','catalogService', function ($scope,$routeParams,catalogService) {
+    .controller('CatalogCtrl',['$scope','$resource','$routeParams','catalogService', function ($scope,$resource,$routeParams,catalogService) {
 
-        catalogService.get({'id':15},function(data){
-            var subs = data.catalog_id_15.subcategories;
-            console.log(subs);
-            var sArr = [];
-            angular.forEach(subs,function(v){
-                angular.forEach(v.subcategories,function(sv){
-                    if(v.url_key.indexOf('-all') == -1){
-                        sArr.push(sv);
-                    }
-                });
+        var self = this;
+        $scope.id = typeof $routeParams.id === 'undefined' ? 15 : $routeParams.id;
+        $scope.subs = [];
+
+        var r = $resource('http://shop.stelladotdevlocal.com/style/b2c_en_us/apiv1/catalog/categories');
+        r.get({}, function(data){
+            $scope.cats = data;
+            $scope.cat = data[$scope.id];
+            var out = [];
+            angular.forEach($scope.cat.subs,function(v){
+                console.log(v);
+                out.push($scope.cats[v]);
             });
-            $scope.categories = data.catalog_id_15.subcategories;
+            $scope.subs = out;
         });
+
+        $scope.showBack = true;
     }]);
