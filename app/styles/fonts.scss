@@ -1,0 +1,46 @@
+@font-face {
+	font-family: 'ProximaNovaRegular';
+	font-weight: normal;
+	font-style: normal;
+	src: url('../fonts/ProximaNova-Reg-webfont.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/ProximaNova-Reg-webfont.woff') format('woff'), /* Modern Browsers */
+	url('../fonts/ProximaNova-Reg-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+	url('../fonts/ProximaNova-Reg-webfont.svg#webfontZam02nTh') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+	font-family: 'ProximaNovaSemibold';
+	font-weight: normal;
+	font-style: normal;
+	src: url('../fonts/ProximaNova-Sbold-webfont.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/ProximaNova-Sbold-webfont.woff') format('woff'), /* Modern Browsers */
+	url('../fonts/ProximaNova-Sbold-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+	url('../fonts/ProximaNova-Sbold-webfont.svg#webfontwhbjdasK') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+	font-family: 'BodoniRecutFSItalic';
+	font-weight: normal;
+	font-style: normal;
+	src: url('BodoniRecut-Italic-webfont.eot'); /* IE9 Compat Modes */
+	src: url('BodoniRecut-Italic-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('BodoniRecut-Italic-webfont.woff') format('woff'), /* Modern Browsers */
+	url('BodoniRecut-Italic-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+	url('BodoniRecut-Italic-webfont.svg#webfont8KgJUhXb') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+	font-family: 'BodoniRecutFSRegular';
+	font-weight: normal;
+	font-style: normal;
+	src: url('BodoniRecut-Regular-webfont.eot'); /* IE9 Compat Modes */
+	src: url('BodoniRecut-Regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('BodoniRecut-Regular-webfont.woff') format('woff'), /* Modern Browsers */
+	url('BodoniRecut-Regular-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+	url('BodoniRecut-Regular-webfont.svg#webfontPdfGaAnJ') format('svg'); /* Legacy iOS */
+}
+
+$proxima: 'ProximaNovaRegular';
+$proximaSemiBold: 'ProximaNovaSemibold';
+$bodoni: 'BodoniRecutFSRegular';
+$bodoniItalic: 'BodoniRecutFSItalic';

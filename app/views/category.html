@@ -1,0 +1,13 @@
+<section class="root-container">
+	<div class="product-list">
+		<div class="product-list-item" ng-repeat="p in products">
+			<div class="pli-image">
+				<img width="450px" height="682px" src="{{ p.image|prodize }}" />
+
+			</div>
+			<div class="pli-name">
+				<div>{{ p.name }}</div>
+			</div>
+		</div>
+	</div>
+</section>
