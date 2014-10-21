@@ -16,7 +16,7 @@ angular.module('yoscratchApp')
 
         var setCat = function(id){
             categoryService.get({'id':id}, function(data){
-                $scope.products = data.products;
+                $scope.category = data;
             });
         };
 

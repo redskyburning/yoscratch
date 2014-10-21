@@ -5,6 +5,19 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 @import "fonts.scss";
 
+// vars
+$shadowColor: rgba(0,0,0,0.4);
+$listItemMax:25rem;
+$listItemPad:1rem;
+$fatBorder:.4rem;
+$gridGutter:$listItemPad * 2.5;
+
+// Resets
+
+h1, h2, h3, h4, h5, h6 {
+	margin:0;
+}
+
 body {
 	font-size:1vmin;
 }
@@ -14,8 +27,7 @@ body {
 	font-family:$proxima;
 	font-size:1.6rem;
 	line-height:1.43em;
-	display:flex;
-	justify-content:space-between;
+	background:#eee;
 
 	.category-list, .product-list {
 		overflow-x:none;
@@ -31,19 +43,45 @@ body {
 	.product-list {
 		flex:1 1 auto;
 	}
+
+	a {
+		color:inherit;
+		text-decoration: none;
+	}
+
+	h1 {
+		background:#fff;
+		color:#000;
+		padding:$listItemPad;
+		line-height:1em;
+		font-family: $knockout;
+		text-transform: uppercase;
+		letter-spacing: .2rem;
+		border-bottom:$fatBorder solid #000;
+		box-shadow:0 .4rem 1.5rem $shadowColor;
+		margin-bottom:$gridGutter;
+		display:flex;
+		align-items:center;
+
+		.h-icon {
+			color:inherit;
+			font-size:.6em;
+			margin-right:.3rem;
+			text-decoration:none;
+		}
+	}
 }
 
 .product-list {
 	display:flex;
 	flex-wrap:wrap;
 	align-items:stretch;
-	justify-content:space-around;
-	background:#ccc;
+	justify-content:space-between;
 
 	.product-list-item {
 		//width:22%;
-		flex:1 1 25rem;
-		margin-bottom:2rem;
+		flex:1 1 $listItemMax;
+		margin-bottom:$gridGutter;
 		display:flex;
 		flex-direction:column;
 		align-items:stretch;
@@ -60,19 +98,24 @@ body {
 		display:flex;
 		flex-direction:column;
 		justify-content:center;
+		box-shadow:0 .7rem 3rem $shadowColor;
 	}
 
 	.pli-image {
 		width:100%;
 		text-align:center;
 		padding-top:7%;
+		padding:0 $listItemPad;
 
 		img {
-			width:86%;
+			width:100%;
+			max-width:$listItemMax - ($listItemPad * 2);
+			padding:1rem;
+			background:#fff;
 			height:auto;
 			border:.4rem solid #000;
-			border-width:.4rem .15rem 0;
-			box-shadow:0 .7rem 3rem rgba(0,0,0,0.5);
+			border-width:$fatBorder .15rem 0;
+			box-shadow:0 .7rem 3rem $shadowColor;
 		}
 	}
 }
