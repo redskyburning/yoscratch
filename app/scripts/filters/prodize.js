@@ -11,6 +11,9 @@
 angular.module('yoscratchApp')
     .filter('prodize', function () {
         return function (input) {
+            if(input === null){
+                return '';
+            }
             return input.replace('stelladotdevlocal','stelladot');
         };
     });

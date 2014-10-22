@@ -1,10 +1,15 @@
 <section class="root-container">
-	<h1><a href="#/catalog/id/{{ cat.parentId }}" class="h-icon glyphicon glyphicon-chevron-left"></a> <span>{{ cat.name }}&nbsp;</span></h1>
+	<h1>
+		<span ng-show="cat.parentId === 2">{{ cat.name }}&nbsp;</span>
+		<a ng-show="cat.parentId !== 2" class="h-link" href="#/catalog/id/{{ cat.parentId }}">
+			<span class="h-icon glyphicon glyphicon-circle-arrow-left"></span>
+			<span>{{ cat.name }}&nbsp;</span>
+		</a>
+	</h1>
 	<div class="product-list">
-		<a href="#/category/id/{{ p.id }}" class="product-list-item" ng-repeat="p in subs">
+		<a href="{{ p.url }}" class="product-list-item" ng-repeat="p in subs">
 			<div class="pli-image">
 				<img width="450px" height="682px" src="{{ p.image|prodize }}" />
-
 			</div>
 			<div class="pli-name">
 				<div>{{ p.name }}</div>

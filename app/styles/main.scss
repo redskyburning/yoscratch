@@ -53,21 +53,25 @@ html, body, body > div {
 	h1 {
 		background:#fff;
 		color:#000;
-		padding:$listItemPad;
-		line-height:1em;
+		padding:$listItemPad ($listItemPad * 2);
 		font-family: $knockout;
 		text-transform: uppercase;
+		font-size:6rem;
+		line-height:1em;
 		letter-spacing: .2rem;
 		border-bottom:$fatBorder solid #000;
 		box-shadow:0 .4rem 1.5rem $shadowColor;
 		margin-bottom:$gridGutter;
-		display:flex;
-		align-items:center;
+
+		.h-link {
+			display:flex;
+			align-items:center;
+		}
 
 		.h-icon {
 			color:inherit;
-			font-size:.6em;
-			margin-right:.3rem;
+			font-size:.5em;
+			margin-right:1rem;
 			text-decoration:none;
 		}
 	}
