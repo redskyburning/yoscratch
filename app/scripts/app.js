@@ -15,6 +15,7 @@ angular
         'ngResource',
         'ngRoute',
         'ngSanitize',
+        'ui.bootstrap',
         'ui.router',
         'ngTouch'
     ])
@@ -26,13 +27,18 @@ angular
                 controller: 'RootCtrl'
             })
             .state('root.catalog', {
-                url: 'catalog/id/:id',
+                url: 'catalog/:id',
                 templateUrl: 'views/catalog.html',
                 controller: 'CatalogCtrl'
             })
             .state('root.category', {
-                url: 'category/id/:id',
+                url: 'category/:id',
                 templateUrl: 'views/category.html',
                 controller: 'CategoryCtrl'
+            })
+            .state('root.product', {
+                url: 'product/:id',
+                templateUrl: 'views/product.html',
+                controller: 'ProductCtrl'
             });
     });

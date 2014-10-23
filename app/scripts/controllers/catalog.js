@@ -8,22 +8,27 @@
  * Controller of the yoscratchApp
  */
 angular.module('yoscratchApp')
-    .controller('CatalogCtrl',['$scope','$resource','$stateParams','catalogService', function ($scope,$resource,$stateParams,catalogService) {
+    .controller('CatalogCtrl',['$scope','$resource','$stateParams','categoryService', function ($scope,$resource,$stateParams,categoryService) {
 
         $scope.cat = {};
         $scope.subs = [];
 
-        var id = typeof $stateParams.id === 'undefined' ? 15 : $stateParams.id;
-        console.log('id',id);
+        var id = !$stateParams.id ? 15 : $stateParams.id;
         $scope.id = id;
+        $scope.isRoot = id === 15;
 
-        var catP = catalogService.getCat(id);
+        var catP = categoryService.getCat(id);
         catP.then(function(cat){
             $scope.cat = cat;
         });
 
-        var subsP = catalogService.getSubs(id);
+        var subsP = categoryService.getSubs(id);
         subsP.then(function(subs){
             $scope.subs = subs;
         });
+
+        $scope.getCatUrl = function(cat){
+            var str = cat.subs.length > 0 ? 'catalog' : 'category';
+            return '/#/' + str + '/' + cat.id;
+        };
     }]);

@@ -1,12 +1,13 @@
 <section class="root-container">
 	<h1>
-		<a class="h-link" href="#/catalog/id/{{ cat.parentId }}">
+		<a class="h-link" href="#/catalog/id/{{ cat.parentId }}" ng-hide="isRoot">
 			<span class="h-icon glyphicon glyphicon-circle-arrow-left"></span>
 			<span>{{ cat.name }}&nbsp;</span>
 		</a>
+		<span class="h-link" ng-show="isRoot">{{ cat.name }}</span>
 	</h1>
 	<div class="product-list">
-		<a href="{{ p.url }}" class="product-list-item" ng-repeat="p in subs">
+		<a ng-href="{{ getCatUrl(p) }}" class="product-list-item" ng-repeat="p in subs">
 			<div class="pli-image">
 				<img width="450px" height="682px" ng-src="{{ p.image|prodize }}" />
 			</div>
