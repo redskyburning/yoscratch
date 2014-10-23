@@ -15,31 +15,53 @@ angular
         'ngResource',
         'ngRoute',
         'ngSanitize',
+        'ui.router',
         'ngTouch'
     ])
-    .config(function ($routeProvider) {
-        $routeProvider
-            .when('/category/id/:id', {
+    .config(function($stateProvider) {
+        $stateProvider
+            .state('root', {
+                url: '/',
+                templateUrl: 'views/root.html',
+                controller: 'RootCtrl'
+            })
+            .state('root.catalog', {
+                url: 'catalog/id/:id',
+                templateUrl: 'views/catalog.html',
+                controller: 'CatalogCtrl'
+            })
+            .state('root.category', {
+                url: 'category/id/:id',
                 templateUrl: 'views/category.html',
                 controller: 'CategoryCtrl'
-            })
-            .when('/category/', {
-                templateUrl: 'views/category.html',
-                controller: 'CategoryCtrl'
-            })
-            .when('/catalog/id/:id', {
-                templateUrl: 'views/catalog.html',
-                controller: 'CatalogCtrl'
-            })
-            .when('/catalog', {
-                templateUrl: 'views/catalog.html',
-                controller: 'CatalogCtrl'
-            })
-            .when('/', {
-                templateUrl: 'views/catalog.html',
-                controller: 'CatalogCtrl'
-            })
-            .otherwise({
-                redirectTo: '/'
             });
     });
+
+/*
+ .config(function ($routeProvider) {
+ $routeProvider
+ .when('/category/id/:id', {
+ templateUrl: 'views/category.html',
+ controller: 'CategoryCtrl'
+ })
+ .when('/category/', {
+ templateUrl: 'views/category.html',
+ controller: 'CategoryCtrl'
+ })
+ .when('/catalog/id/:id', {
+ templateUrl: 'views/catalog.html',
+ controller: 'CatalogCtrl'
+ })
+ .when('/catalog', {
+ templateUrl: 'views/catalog.html',
+ controller: 'CatalogCtrl'
+ })
+ .when('/', {
+ templateUrl: 'views/catalog.html',
+ controller: 'CatalogCtrl'
+ })
+ .otherwise({
+ redirectTo: '/'
+ });
+ });
+*/

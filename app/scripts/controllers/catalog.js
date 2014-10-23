@@ -8,9 +8,10 @@
  * Controller of the yoscratchApp
  */
 angular.module('yoscratchApp')
-    .controller('CatalogCtrl',['$scope','$resource','$routeParams','catalogService', function ($scope,$resource,$routeParams) {
+    .controller('CatalogCtrl',['$scope','$resource','$stateParams', function ($scope,$resource,$stateParams) {
 
-        $scope.id = typeof $routeParams.id === 'undefined' ? 15 : $routeParams.id;
+        console.log('id',$stateParams.id);
+        $scope.id = typeof $stateParams.id === 'undefined' ? 15 : $stateParams.id;
         $scope.subs = [];
         $scope.parentId = 0;
 
@@ -19,7 +20,6 @@ angular.module('yoscratchApp')
             $scope.cats = data;
             $scope.cat = data[$scope.id];
             $scope.parentId = data[$scope.id].parentId;
-            console.log($scope.cat);
             var out = [];
             angular.forEach($scope.cat.subs,function(v){
                 var sc = $scope.cats[v];
@@ -28,6 +28,4 @@ angular.module('yoscratchApp')
             });
             $scope.subs = out;
         });
-
-        $scope.showBack = true;
     }]);

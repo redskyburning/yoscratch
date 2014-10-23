@@ -15,27 +15,9 @@
 	<link rel="stylesheet" href="styles/main.css">
 	<!-- endbuild -->
 </head>
-<body ng-app="yoscratchApp" id="app-root">
-	<header id="app-header">
-		<div class="header-logo-wrap">
-			<img id="logo" src="/images/logo-color.svg" />
-		</div>
-		<div class="header-ui-wrap">
-			<!--<span class="glyphicon glyphicon-search"></span>-->
-			<span class="glyphicon glyphicon-th"></span>
+<body ng-app="yoscratchApp">
+	<div id="app-root" ui-view></div>
 
-		</div>
-	</header>
-	<div id="app-main">
-		<div id="app-content">
-			<div id="app-view" ng-view=""></div>
-		</div>
-		<div id="menu-panel" class="app-panel panel-bottom"></div>
-	</div>
-
-	<!--<footer>
-		<p>There seemed something menacing in their attitude toward my beast, and I hesitated to leave until I had learned the outcome.  It was well I did so, for the warrior drew an evil looking pistol from its holster and was on the point of putting an end to the creature when I sprang forward and struck up his arm.  The bullet striking the wooden casing of the window exploded, blowing a hole completely through the wood and masonry.</p>
-	</footer>-->
 	<!-- build:js(.) scripts/oldieshim.js -->
 	<!--[if lt IE 9]>
 	<script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -72,6 +54,7 @@
 	<script src="bower_components/rangy-official/rangy-serializer.min.js"></script>
 	<script src="bower_components/rangy-official/rangy-textrange.min.js"></script>
 	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 	<!-- endbower -->
 	<!-- endbuild -->
 
@@ -82,6 +65,7 @@
 <script src="scripts/filters/prodize.js"></script>
 <script src="scripts/services/catalogservice.js"></script>
 <script src="scripts/controllers/catalog.js"></script>
+<script src="scripts/controllers/root.js"></script>
 	<!-- endbuild -->
 </body>
 </html>

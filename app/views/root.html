@@ -1,0 +1,19 @@
+
+<header id="app-header">
+	<div class="header-logo-wrap">
+		<img id="logo" src="/images/logo-color.svg" />
+	</div>
+	<div class="header-ui-wrap">
+		<!--<span class="glyphicon glyphicon-search"></span>-->
+		<span class="glyphicon glyphicon-th" ng-click="panel = !panel"></span>
+
+	</div>
+</header>
+<div id="app-main">
+	<div id="app-content">
+		<div id="app-view" ui-view></div>
+	</div>
+	<div id="menu-panel" class="app-panel panel-bottom" ng-show="panel"></div>
+
+</div>
+

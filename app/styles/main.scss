@@ -28,6 +28,7 @@ html, body {
 }
 
 #app-root {
+	height:100%;
 	display:flex;
 	flex-direction:column;
 	align-items:stretch;
@@ -55,7 +56,7 @@ html, body {
 			box-shadow:0 -.4rem 1.5rem $shadowColor;
 			left:0;
 			bottom:0;
-			height:90%;
+			height:80%;
 			width:100%;
 		}
 
@@ -103,7 +104,7 @@ html, body {
 }
 
 .root-container {
-	opacity:.6;
+	//opacity:.6;
 	font-family:$proxima;
 	font-size:1.6rem;
 	line-height:1.43em;

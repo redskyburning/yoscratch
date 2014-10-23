@@ -1,7 +1,6 @@
 <section class="root-container">
 	<h1>
-		<span ng-show="cat.parentId === 2">{{ cat.name }}&nbsp;</span>
-		<a ng-show="cat.parentId !== 2" class="h-link" href="#/catalog/id/{{ cat.parentId }}">
+		<a class="h-link" href="#/catalog/id/{{ cat.parentId }}">
 			<span class="h-icon glyphicon glyphicon-circle-arrow-left"></span>
 			<span>{{ cat.name }}&nbsp;</span>
 		</a>
@@ -9,7 +8,7 @@
 	<div class="product-list">
 		<a href="{{ p.url }}" class="product-list-item" ng-repeat="p in subs">
 			<div class="pli-image">
-				<img width="450px" height="682px" src="{{ p.image|prodize }}" />
+				<img width="450px" height="682px" ng-src="{{ p.image|prodize }}" />
 			</div>
 			<div class="pli-name">
 				<div>{{ p.name }}</div>
