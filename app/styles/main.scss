@@ -12,6 +12,8 @@ $listItemPad:1rem;
 $thinBorder:.1rem;
 $fatBorder:.4rem;
 $gridGutter:$listItemPad * 2.5;
+$panelTime:.5s;
+$panelEase:ease;
 
 // Resets
 
@@ -23,50 +25,63 @@ html {
 	//font-size:1vmin;
 }
 
-html, body {
+html, body, #app-wrap, #app-root {
 	height:100%;
 }
 
 #app-root {
-	height:100%;
 	display:flex;
 	flex-direction:column;
 	align-items:stretch;
+}
 
-	#app-main {
-		position:relative;
-		background:#eee;
-		flex:1 1 auto;
-		overflow:hidden;
-	}
+#app-main {
+	position:relative;
+	background:#eee;
+	flex:1 1 auto;
+	overflow:hidden;
+}
 
-	#app-content {
-		position:absolute;
-		height:100%;
+#app-content {
+	position:absolute;
+	height:100%;
+	width:100%;
+	overflow-y:scroll;
+}
+
+.app-panel {
+	position:absolute;
+	background:#fff;
+
+	&.panel-bottom {
+		left:0;
+		bottom:-100%;
+		transition:bottom $panelTime $panelEase;
+		border-top:$fatBorder solid #000;
+		box-shadow:0 -.4rem 1.5rem $shadowColor;
+		height:80%;
 		width:100%;
-		overflow-y:scroll;
 	}
 
-	.app-panel {
-		position:absolute;
-		background:#fff;
+	&.panel-left {
+		bottom:0;
+		left:-100%;
+		transition:left $panelTime $panelEase;
+		border-right:$fatBorder solid #000;
+		box-shadow:.4rem 0 1.5rem $shadowColor;
+		height:100%;
+		width:80%;
+	}
+}
 
+.panel-active {
+	.app-panel {
 		&.panel-bottom {
-			border-top:$fatBorder solid #000;
-			box-shadow:0 -.4rem 1.5rem $shadowColor;
-			left:0;
 			bottom:0;
-			height:80%;
-			width:100%;
 		}
 
 		&.panel-left {
-			border-right:$fatBorder solid #000;
-			box-shadow:.4rem 0 1.5rem $shadowColor;
 			left:0;
-			bottom:0;
-			height:100%;
-			width:80%;
 		}
 	}
 }
@@ -104,7 +119,8 @@ html, body {
 }
 
 .root-container {
-	//opacity:.6;
+	transition:opacity $panelTime $panelEase;
+	opacity:1;
 	font-family:$proxima;
 	font-size:1.6rem;
 	line-height:1.43em;
@@ -198,5 +214,15 @@ html, body {
 			border-width:$fatBorder .15rem 0;
 			box-shadow:0 .7rem 3rem $shadowColor;
 		}
+	}
+}
+
+.panel-active {
+	#app-content {
+		overflow:hidden;
+	}
+
+	.root-container {
+		opacity:.6;
 	}
 }

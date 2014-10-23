@@ -9,5 +9,5 @@
  */
 angular.module('yoscratchApp')
     .controller('RootCtrl', function ($scope) {
-        $scope.panel = true;
+        $scope.panel = false;
     });
