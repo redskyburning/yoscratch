@@ -8,24 +8,22 @@
  * Controller of the yoscratchApp
  */
 angular.module('yoscratchApp')
-    .controller('CatalogCtrl',['$scope','$resource','$stateParams', function ($scope,$resource,$stateParams) {
+    .controller('CatalogCtrl',['$scope','$resource','$stateParams','catalogService', function ($scope,$resource,$stateParams,catalogService) {
 
-        console.log('id',$stateParams.id);
-        $scope.id = typeof $stateParams.id === 'undefined' ? 15 : $stateParams.id;
+        $scope.cat = {};
         $scope.subs = [];
-        $scope.parentId = 0;
 
-        var r = $resource('http://shop.stelladotdevlocal.com/style/b2c_en_us/apiv1/catalog/categories');
-        r.get({}, function(data){
-            $scope.cats = data;
-            $scope.cat = data[$scope.id];
-            $scope.parentId = data[$scope.id].parentId;
-            var out = [];
-            angular.forEach($scope.cat.subs,function(v){
-                var sc = $scope.cats[v];
-                sc.url = sc.subs.length > 0 ? '#/catalog/id/' + sc.id : '#/category/id/' + sc.id;
-                out.push(sc);
-            });
-            $scope.subs = out;
+        var id = typeof $stateParams.id === 'undefined' ? 15 : $stateParams.id;
+        console.log('id',id);
+        $scope.id = id;
+
+        var catP = catalogService.getCat(id);
+        catP.then(function(cat){
+            $scope.cat = cat;
+        });
+
+        var subsP = catalogService.getSubs(id);
+        subsP.then(function(subs){
+            $scope.subs = subs;
         });
     }]);
