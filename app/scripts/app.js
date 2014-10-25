@@ -10,7 +10,7 @@
  */
 angular
     .module('yoscratchApp', [
-        'ngAnimate',
+        //'ngAnimate',
         'ngCookies',
         'ngResource',
         'ngRoute',

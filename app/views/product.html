@@ -2,11 +2,20 @@
 	<h1>
 		{{ product.name }}
 	</h1>
+	<div  class="product-gallery">
+		<carousel interval="-1">
+			<slide ng-repeat="i in images" active="i.active">
+				<img ng-src="{{ i.src }}" style="margin:auto;">
+				<div class="carousel-caption">
+					caption
+				</div>
+			</slide>
+		</carousel>
+
+	</div>
+
 	<div class="product-list">
 		<div class="product-list-item">
-			<div class="pli-image">
-				<img width="450px" height="682px" ng-src="{{ product.image|prodize }}" />
-			</div>
 			<div class="pli-name">
 				<div>{{ product.name }}</div>
 			</div>

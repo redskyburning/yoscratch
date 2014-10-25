@@ -226,3 +226,25 @@ html, body, #app-wrap, #app-root {
 		opacity:.6;
 	}
 }
+
+.product-gallery {
+	height:40rem;
+
+	.carousel, .carousel-inner, .item {
+		height:100%;
+	}
+
+	.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+		height:100%;
+		width:auto;
+	}
+
+	.carousel-control {
+		opacity:1;
+
+		&.left, &.right {
+			background:none;
+			color:#000;
+		}
+	}
+}

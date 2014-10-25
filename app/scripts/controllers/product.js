@@ -18,14 +18,6 @@ angular.module('yoscratchApp')
         var productP = productService.getProduct(id);
         productP.then(function(product){
             $scope.product = product;
-
-            var images = [];
-            angular.forEach(product.media_gallery.images,function(v,k){
-                images.push({
-                    'src' : v['450x682'].replace('stelladotdevlocal','stelladot'),
-                    'active' : k === 0
-                });
-            });
-            $scope.images = images;
+            $scope.images = productService.getImages(product,'450x682');
         });
     }]);
