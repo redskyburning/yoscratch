@@ -1,29 +1,40 @@
 <section class="root-container product-container">
-	<h1>
-		{{ product.name }}
-	</h1>
 	<div  class="product-gallery">
 		<carousel interval="-1">
 			<slide ng-repeat="i in images" active="i.active">
 				<img ng-src="{{ i.src }}" style="margin:auto;">
-				<div class="carousel-caption">
+				<!--<div class="carousel-caption">
 					caption
-				</div>
+				</div>-->
 			</slide>
 		</carousel>
 
 	</div>
 
-	<div class="product-list">
-		<div class="product-list-item">
-			<div class="pli-name">
-				<div>{{ product.name }}</div>
-			</div>
-			<p>How vain and foolish, then, thought I, for timid untravelled man to try to comprehend aright this wondrous whale, by merely poring over his dead attenuated skeleton, stretched in this peaceful wood. No. Only in the heart of quickest perils; only when within the eddyings of his angry flukes; only on the profound unbounded sea, can the fully invested whale be truly and livingly found out.</p>
+	<h1 class="product-name">
+		{{ product.name }}
+	</h1>
 
-			<p>But the spine. For that, the best way we can consider it is, with a crane, to pile its bones high up on end. No speedy enterprise. But now it's done, it looks much like Pompey's Pillar.</p>
-
-			<p>There are forty and odd vertebrae in all, which in the skeleton are not locked together. They mostly lie like the great knobbed blocks on a Gothic spire, forming solid courses of heavy masonry. The largest, a middle one, is in width something less than three feet, and in depth more than four. The smallest, where the spine tapers away into the tail, is only two inches in width, and looks something like a white billiard-ball. I was told that there were still smaller ones, but they had been lost by some little cannibal urchins, the priest's children, who had stolen them to play marbles with. Thus we see how that the spine of even the hugest of living things tapers off at last into simple child's play.</p>
+	<div class="product-detail">
+		<div class="product-add input-group">
+			<input type="text" class="form-control" placeholder="Quantity" ng-model="quant">
+			<span class="input-group-btn">
+				<button class="btn btn-success btn-quant" type="button">
+					<span class="glyphicon glyphicon-shopping-cart"></span>
+					<span class="glyphicon glyphicon-plus"></span>
+				</button>
+				<button class="btn btn-info btn-wish" type="button">
+					<span class="glyphicon glyphicon-heart-empty"></span>
+				</button>
+			</span>
+		</div>
+		<div class="product-description" ng-bind-html="product.description">
+		</div>
+		<div class="product-social">
+			<span class="sd-icon sd-icon-facebook"></span>
+			<span class="sd-icon sd-icon-twitter"></span>
+			<span class="sd-icon sd-icon-pinterest"></span>
+			<span class="sd-icon sd-icon-mail2"></span>
 		</div>
 	</div>
 </section>
