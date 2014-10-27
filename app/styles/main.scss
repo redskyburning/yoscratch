@@ -126,6 +126,11 @@ html, body, #app-wrap, #app-root {
 			padding:0 1rem;
 		}
 
+		a {
+			color:inherit;
+			text-decoation:none;
+		}
+
 		.count-wrap {
 			position:relative;
 
@@ -135,6 +140,10 @@ html, body, #app-wrap, #app-root {
 				left:3px;
 				background-color:$teal;
 			}
+		}
+
+		.wish {
+			color:$teal;
 		}
 	}
 }
@@ -356,4 +365,14 @@ html, body, #app-wrap, #app-root {
 
 .product-description {
 	text-align:justify;
+}
+
+// Cart
+
+.cart-container {
+	padding:$listItemPad * 2;
+}
+
+.cart-list {
+	width:100%;
 }

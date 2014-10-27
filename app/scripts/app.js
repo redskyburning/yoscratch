@@ -40,5 +40,15 @@ angular
                 url: 'product/:id',
                 templateUrl: 'views/product.html',
                 controller: 'ProductCtrl'
+            })
+            .state('root.cart', {
+                url: 'cart',
+                templateUrl: 'views/cart.html',
+                controller: 'CartCtrl'
+            })
+            .state('root.wish', {
+                url: 'wishlist',
+                templateUrl: 'views/wishlist.html',
+                controller: 'WishlistCtrl'
             });
     });

@@ -1,0 +1,12 @@
+<section class="root-container cart-container">
+	<table class="cart-list">
+		<tr>
+			<td>Product</td>
+			<td>Quantity</td>
+		</tr>
+		<tr ng-repeat="c in cart">
+			<td>{{ c.product.name }}</td>
+			<td>{{ c.quant }}</td>
+		</tr>
+	</table>
+</section>
