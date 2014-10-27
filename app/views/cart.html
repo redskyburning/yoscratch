@@ -1,12 +1,44 @@
 <section class="root-container cart-container">
-	<table class="cart-list">
-		<tr>
-			<td>Product</td>
-			<td>Quantity</td>
-		</tr>
-		<tr ng-repeat="c in cart">
-			<td>{{ c.product.name }}</td>
-			<td>{{ c.quant }}</td>
-		</tr>
+	<h1 class="category-name">
+		Shopping Cart
+	</h1>
+	<table class="cart-list" ng-if="count > 0">
+		<thead>
+			<tr>
+				<th class="header-detail">Product</th>
+				<th class="header-qty">Qty</th>
+				<th class="header-price">$</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="product-row" ng-repeat="p in cart">
+				<td class="product-detail">
+					<div class="product-image">
+						<img width="450px" height="682px" ng-src="{{ p.product.image|prodize }}" />
+					</div>
+					<div class="product-name">{{ p.product.name }}</div>
+				</td>
+				<td class="product-qty">
+					<div>{{ p.quant }}</div>
+				</td>
+				<td class="product-price">
+					<div>${{ p.product.price }}</div>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="2">
+					<div>Grand Total:</div>
+				</td>
+				<td>
+					<div>${{ total }}</div>
+				</td>
+			</tr>
+		</tfoot>
 	</table>
+	<div class="empty-message" ng-if="count == 0">
+		Your cart is empty. You should buy something purdy.
+	</div>
+	<!--{{ cart|json }}-->
 </section>

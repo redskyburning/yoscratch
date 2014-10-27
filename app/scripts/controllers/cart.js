@@ -10,4 +10,6 @@
 angular.module('yoscratchApp')
     .controller('CartCtrl',['$scope','cartService', function ($scope,cartService) {
         $scope.cart = cartService.getCart();
+        $scope.total = cartService.updateTotal();
+        $scope.count = cartService.getCount();
     }]);

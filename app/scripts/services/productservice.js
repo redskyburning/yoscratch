@@ -45,7 +45,8 @@ angular.module('yoscratchApp')
                 'name'          : product.name,
                 'sku'           : product.sku,
                 'description'   : product.description,
-                'image'         : product.media_gallery.images[0]['450x682']
+                'image'         : product.media_gallery.images[0]['450x682'],
+                'price'         : Number(product.price)
             };
             console.log('data',product);
             return data;
