@@ -27,4 +27,8 @@ angular.module('yoscratchApp')
                 $scope.addToCart($scope.product,Number($scope.quant));
             }
         };
+
+        $scope.wishlist = function(){
+            $scope.addToWishlist($scope.product);
+        };
     }]);
