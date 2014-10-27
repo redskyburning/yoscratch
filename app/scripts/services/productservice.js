@@ -39,4 +39,15 @@ angular.module('yoscratchApp')
             });
             return images;
         };
+
+        this.getData = function(product){
+            var data = {
+                'name'          : product.name,
+                'sku'           : product.sku,
+                'description'   : product.description,
+                'image'         : product.media_gallery.images[0]['450x682']
+            };
+            console.log('data',product);
+            return data;
+        };
     }]);

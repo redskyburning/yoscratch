@@ -8,8 +8,11 @@
  * Controller of the yoscratchApp
  */
 angular.module('yoscratchApp')
-    .controller('RootCtrl', function ($scope) {
+    .controller('RootCtrl',['$scope','cartService', function ($scope,cartService) {
         $scope.panel = false;
 
-
-    });
+        $scope.count = 0;
+        $scope.addToCart = function(product,quant){
+            $scope.count = cartService.add(product,quant);
+        };
+    }]);

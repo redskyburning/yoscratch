@@ -17,7 +17,13 @@ angular.module('yoscratchApp')
 
         var productP = productService.getProduct(id);
         productP.then(function(product){
-            $scope.product = product;
+            $scope.product = productService.getData(product);
             $scope.images = productService.getImages(product,'450x682');
         });
+
+        $scope.add = function(){
+            if(typeof $scope.quant !== 'undefined'){
+                $scope.addToCart($scope.product,Number($scope.quant));
+            }
+        };
     }]);

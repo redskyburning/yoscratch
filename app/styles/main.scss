@@ -5,6 +5,13 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 @import "fonts.scss";
 
+
+$orange: #ff6600;
+$green: #71AD53;
+$teal: #5FC5C1;
+$red: #f62e23;
+$yellow: #eae64b;
+
 // vars
 $shadowColor: rgba(0,0,0,0.4);
 $listItemMax:25rem;
@@ -109,10 +116,25 @@ html, body, #app-wrap, #app-root {
 	}
 
 	.header-ui-wrap {
+		display:flex;
+		align-items:center;
+
 		> * {
 			display:block;
 			font-size:.5em;
 			line-height:1em;
+			padding:0 1rem;
+		}
+
+		.count-wrap {
+			position:relative;
+
+			.count {
+				position:absolute;
+				top:-3px;
+				left:3px;
+				background-color:$teal;
+			}
 		}
 	}
 }
