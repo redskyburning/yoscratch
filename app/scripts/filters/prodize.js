@@ -11,9 +11,10 @@
 angular.module('yoscratchApp')
     .filter('prodize', function () {
         return function (input) {
-            if(input === null){
+            if(input === null || typeof input === 'undefined'){
                 return '';
             }
+
             return input.replace('stelladotdevlocal','stelladot');
         };
     });

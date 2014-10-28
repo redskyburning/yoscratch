@@ -52,3 +52,13 @@ angular
                 controller: 'WishlistCtrl'
             });
     });
+
+angular.element(document).ready(function () {
+    window.$.get('http://shop.stelladotdevlocal.com/style/b2c_en_us/apiv1/catalog/ng',function(data){
+        angular.module('yoscratchApp').config(['catalogServiceProvider', function (catalogServiceProvider) {
+            catalogServiceProvider.config(data);
+        }]);
+
+        angular.bootstrap('#yoscratchApp', ['yoscratchApp']);
+    });
+});

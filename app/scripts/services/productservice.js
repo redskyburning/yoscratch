@@ -8,30 +8,27 @@
  * Service in the yoscratchApp.
  */
 angular.module('yoscratchApp')
-  .service('productService',['$resource','$q', function productService($resource,$q) {
-        //var self = this;
+  .service('productService',['catalogService','categoryService', function productService(catalogService,categoryService) {
+        var self = this;
 
         this.getProductsByCat = function(catId){
-            var r = $resource('http://shop.stelladotdevlocal.com/style/b2c_en_us/apiv1/product/category/category_id/:id');
-            return $q(function(resolve){
-                r.get({'id':catId},function(data){
-                    resolve(data.products);
-                });
+            var cat = categoryService.getCat(catId);
+            var products = [];
+            angular.forEach(cat.products,function(v,k){
+                products.push(self.getProduct(v));
             });
+            console.log(products);
+            return products;
         };
 
         this.getProduct = function(id){
-            var r = $resource('http://shop.stelladotdevlocal.com/style/b2c_en_us/apiv1/product/id/id/:id');
-            return $q(function(resolve){
-                r.get({'id':id},function(product){
-                    resolve(product);
-                });
-            });
+            var p = catalogService.products[id];
+            return p;
         };
 
         this.getImages = function(product,size){
             var images = [];
-            angular.forEach(product.media_gallery.images,function(v,k){
+            angular.forEach(product.mediaGallery.images,function(v,k){
                 images.push({
                     'src' : v[size].replace('stelladotdevlocal','stelladot'),
                     'active' : k === 0
@@ -45,7 +42,7 @@ angular.module('yoscratchApp')
                 'name'          : product.name,
                 'sku'           : product.sku,
                 'description'   : product.description,
-                'image'         : product.media_gallery.images[0]['450x682'],
+                'image'         : product.mediaGallery.images[0]['450x682'],
                 'price'         : Number(product.price)
             };
             console.log('data',product);

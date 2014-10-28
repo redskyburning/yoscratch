@@ -15,105 +15,105 @@ angular.module('yoscratchApp')
                 'children'  : [
                     {
                         'title'     : 'What\'s New',
-                        'url'       : '#/catalog/431',
+                        'catId'     : 431,
                         'children'  : [
                             {
                                 'title'     : 'New Arrivals',
-                                'url'       : '#/category/722'
+                                'catId'     : 722
                             },
                             {
                                 'title'     : 'Best Sellers',
-                                'url'       : '#/category/716'
+                                'catId'     : 716
                             }
                         ]
                     },
                     {
                         'title'     : 'Jewelry',
-                        'url'       : '#/catalog/15',
+                        'catId'     : 15,
                         'children'  : [
                             {
                                 'title'     : 'Necklaces',
-                                'url'       : '#/category/16'
+                                'catId'     : 16
                             },
                             {
                                 'title'     : 'Charms & Engravables',
-                                'url'       : '#/category/3080'
+                                'catId'     : 3080
                             },
                             {
                                 'title'     : 'Charms',
-                                'url'       : '#/category/27'
+                                'catId'     : 27
                             },
                             {
                                 'title'     : 'Bracelets',
-                                'url'       : '#/category/29'
+                                'catId'     : 29
                             },
                             {
                                 'title'     : 'Earrings',
-                                'url'       : '#/category/28'
+                                'catId'     : 28
                             },
                             {
                                 'title'     : 'Rings',
-                                'url'       : '#/category/30'
+                                'catId'     : 30
                             },
                             {
                                 'title'     : 'Girls Collection',
-                                'url'       : '#/category/31'
+                                'catId'     : 31
                             },
                             {
                                 'title'     : 'Storage & Display',
-                                'url'       : '#/category/2946'
+                                'catId'     : 2946
                             }
                         ]
                     },
                     {
                         'title'     : 'Bags & More',
-                        'url'       : '#/catalog/',
+                        'catId'     : 42,
                         'children'  : [
                             {
                                 'title'     : 'Bags',
-                                'url'       : '#/category/2650'
+                                'catId'     : 2650
                             },
                             {
                                 'title'     : 'Wallets',
-                                'url'       : '#/category/1104'
+                                'catId'     : 1104
                             },
                             {
                                 'title'     : 'Small Accessories',
-                                'url'       : '#/category/1108'
+                                'catId'     : 1108
                             },
                             {
                                 'title'     : 'Tech Accessories',
-                                'url'       : '#/category/732'
+                                'catId'     : 732
                             },
                             {
                                 'title'     : 'Scarves',
-                                'url'       : '#/category/730'
+                                'catId'     : 730
                             }
                         ]
                     },
                     {
                         'title'     : 'Boutiques',
-                        'url'       : '#/catalog/199',
+                        'catId'     : 199,
                         'children'  : [
                             {
                                 'title'     : 'Versatility Shop',
-                                'url'       : '#/category/2262'
+                                'catId'     : 2262
                             },
                             {
                                 'title'     : 'Statement Pieces',
-                                'url'       : '#/category/2100'
+                                'catId'     : 2100
                             },
                             {
                                 'title'     : 'Under $50',
-                                'url'       : '#/category/2262'
+                                'catId'     : 2262
                             },
                             {
                                 'title'     : 'As Seen On',
-                                'url'       : '#/category/1122'
+                                'catId'     : 1122
                             },
                             {
                                 'title'     : 'Shop for a Cause',
-                                'url'       : '#/category/1126'
+                                'catId'     : 1126
                             }
                         ]
                     }

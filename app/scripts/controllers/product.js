@@ -16,11 +16,8 @@ angular.module('yoscratchApp')
         $scope.product = {};
         $scope.quant = 1;
 
-        var productP = productService.getProduct(id);
-        productP.then(function(product){
-            $scope.product = productService.getData(product);
-            $scope.images = productService.getImages(product,'450x682');
-        });
+        $scope.product = productService.getProduct(id);
+        $scope.images = productService.getImages($scope.product,'450x682');
 
         $scope.add = function(){
             if(typeof $scope.quant !== 'undefined'){

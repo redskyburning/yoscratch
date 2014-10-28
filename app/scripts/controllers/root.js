@@ -9,7 +9,7 @@
  */
 angular.module('yoscratchApp')
     .controller('RootCtrl',['$scope','cartService','wishlistService','menuService', function ($scope,cartService,wishlistService,menuService) {
-        $scope.panel = true;
+        $scope.panel = false;
 
         $scope.menu = {};
         var menuData = menuService.getMenu();
