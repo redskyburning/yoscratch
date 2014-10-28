@@ -20,7 +20,17 @@
 		<div id="app-content">
 			<div id="app-view" ui-view></div>
 		</div>
-		<div id="menu-panel" class="app-panel panel-bottom"></div>
+		<div id="menu-panel" class="app-panel panel-bottom">
+			<accordion close-others="true" id="cat-panel">
+				<accordion-group heading="{{m.title}}" ng-repeat="m in menu">
+					<ul>
+						<li ng-repeat="c in m.children">
+							<a ng-href="{{ c.url }}">{{ c.title }}</a>
+						</li>
+					</ul>
+				</accordion-group>
+			</accordion>
+		</div>
 	</div>
 </div>
 

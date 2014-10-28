@@ -29,6 +29,11 @@ h1, h2, h3, h4, h5, h6 {
 	margin:0;
 }
 
+a, a:hover, a:visited, a:link, a:active {
+	color:inherit;
+	text-decoration: none;
+}
+
 html {
 	//font-size:1vmin;
 }
@@ -56,9 +61,12 @@ html, body, #app-wrap, #app-root {
 	overflow-y:scroll;
 }
 
+// Panel
+
 .app-panel {
 	position:absolute;
 	background:#fff;
+	padding:$listItemPad;
 
 	&.panel-bottom {
 		left:0;
@@ -92,6 +100,48 @@ html, body, #app-wrap, #app-root {
 		}
 	}
 }
+
+#cat-panel {
+	.panel-group {
+		.panel {
+			border-radius:0;
+			border:none;
+			box-shadow: none;
+
+			.panel-heading {
+				background: none;
+				border:none;
+				padding:0;
+
+				.panel-title {
+					font-family:$knockout;
+					text-transform: uppercase;
+					//border-bottom:$fatBorder * 2 solid #000;
+					font-size:2.5rem;
+					line-height: 1em;
+					background:#000;
+					padding:$listItemPad;
+					color:#fff;
+				}
+			}
+
+			.panel-body {
+				border:none;
+				border:$thinBorder solid #000;
+				border-bottom-width: $fatBorder;
+				padding:$listItemPad;
+			}
+		}
+	}
+
+	ul {
+		list-style: none;
+		padding:0;
+		margin:0;
+	}
+}
+
+// Header
 
 #app-header {
 	position:relative;

@@ -13,13 +13,16 @@ angular.module('yoscratchApp')
         $scope.cat = {};
         $scope.subs = [];
 
-        var id = !$stateParams.id ? 15 : $stateParams.id;
+        var id = !$stateParams.id ? 2 : $stateParams.id;
         $scope.id = id;
-        $scope.isRoot = id === 15;
+        $scope.isRoot = id === 2;
 
         var catP = categoryService.getCat(id);
         catP.then(function(cat){
             $scope.cat = cat;
+            if(cat.parentId === 2){
+                $scope.isRoot = true;
+            }
         });
 
         var subsP = categoryService.getSubs(id);

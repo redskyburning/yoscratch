@@ -34,8 +34,12 @@ angular.module('yoscratchApp')
             var subs = [];
             var cat = getCat(id);
             angular.forEach(cat.subs,function(v){
-                subs.push(getCat(v));
+                var c = getCat(v);
+                if(typeof c !== 'undefined'){
+                    subs.push(c);
+                }
             });
+            console.log(subs);
             return subs;
         };
 
