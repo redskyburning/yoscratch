@@ -22,12 +22,17 @@
 		</div>
 		<div id="menu-panel" class="app-panel panel-bottom">
 			<accordion close-others="true" id="cat-panel">
-				<accordion-group heading="{{m.title}}" ng-repeat="m in menu">
-					<ul>
-						<li ng-repeat="c in m.children">
-							<a ng-href="{{ c.url }}">{{ c.title }}</a>
-						</li>
-					</ul>
+				<accordion-group heading="{{m.title}}" is-open="false" ng-repeat="m in menu">
+					<div class="menu-subs">
+						<a class="menu-sub" ng-href="#/category/{{ c.catId }}" ng-repeat="c in m.children">
+							<div class="sub-image">
+								<img ng-src="{{ getCatImage(c.catId)|prodize }}" />
+							</div>
+							<div class="sub-name">
+								{{ c.title }}
+							</div>
+						</a>
+					</div>
 				</accordion-group>
 			</accordion>
 		</div>

@@ -14,10 +14,21 @@ angular.module('yoscratchApp')
         this.getProductsByCat = function(catId){
             var cat = categoryService.getCat(catId);
             var products = [];
-            angular.forEach(cat.products,function(v,k){
-                products.push(self.getProduct(v));
+            angular.forEach(cat.products,function(v){
+                var p = self.getProduct(v);
+                if(typeof p !== 'undefined'){
+                    products.push(p);
+                }
             });
             console.log(products);
+            return products;
+        };
+
+        this.getProductsFromIdArr = function(idArr){
+            var products = [];
+            angular.forEach(idArr,function(v){
+                products.push(self.getProduct(v));
+            });
             return products;
         };
 

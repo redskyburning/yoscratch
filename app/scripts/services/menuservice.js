@@ -41,7 +41,7 @@ angular.module('yoscratchApp')
                             },
                             {
                                 'title'     : 'Charms',
-                                'catId'     : 27
+                                'catId'     : 3086
                             },
                             {
                                 'title'     : 'Bracelets',
@@ -97,7 +97,7 @@ angular.module('yoscratchApp')
                         'children'  : [
                             {
                                 'title'     : 'Versatility Shop',
-                                'catId'     : 2262
+                                'catId'     : 762
                             },
                             {
                                 'title'     : 'Statement Pieces',

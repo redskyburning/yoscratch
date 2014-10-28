@@ -9,6 +9,8 @@
  */
 angular.module('yoscratchApp')
     .service('categoryService',['catalogService', function categoryService(catalogService) {
+        var self = this;
+
         var getCat = function(id){
             var cat = catalogService.categories[id];
             return cat;
@@ -32,5 +34,13 @@ angular.module('yoscratchApp')
 
         this.getSubs = function(id){
             return getSubs(id);
+        };
+
+        this.getCatsFromIdArr = function(idArr){
+            var cats = [];
+            angular.forEach(idArr,function(v){
+                cats.push(self.getCat(v));
+            });
+            return cats;
         };
     }]);

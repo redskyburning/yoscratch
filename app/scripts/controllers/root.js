@@ -8,7 +8,7 @@
  * Controller of the yoscratchApp
  */
 angular.module('yoscratchApp')
-    .controller('RootCtrl',['$scope','cartService','wishlistService','menuService', function ($scope,cartService,wishlistService,menuService) {
+    .controller('RootCtrl',['$scope','cartService','wishlistService','menuService','categoryService', function ($scope,cartService,wishlistService,menuService,categoryService) {
         $scope.panel = false;
 
         $scope.menu = {};
@@ -24,6 +24,11 @@ angular.module('yoscratchApp')
 
         $scope.addToWishlist = function(product){
             wishlistService.add(product);
+        };
+
+        $scope.getCatImage = function(catId){
+            var cat = categoryService.getCat(catId);
+            return cat.image;
         };
 
     }]);
