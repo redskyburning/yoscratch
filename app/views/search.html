@@ -12,13 +12,16 @@
 			</span>
 		</div>
 	</form>
-	<div class="catalog-grid" ng-if="products.length > 0">
-		<product-item sd-product="p" ng-repeat="p in products" />
+	<div class="empty-message" ng-if="processing">
+		Searching...
 	</div>
-	<div class="empty-message" ng-if="!searched">
+	<div class="empty-message" ng-if="!processing && !searched">
 		Use the bar above to search for products.
 	</div>
-	<div class="empty-message" ng-if="searched && products.length == 0">
+	<div class="empty-message" ng-if="!processing && searched && products.length == 0">
 		We couldn't find any products that matched your search. Try searching for something else.
+	</div>
+	<div class="catalog-grid" ng-if="!processing && searched  && products.length > 0">
+		<product-item sd-product="p" ng-repeat="p in products" />
 	</div>
 </section>

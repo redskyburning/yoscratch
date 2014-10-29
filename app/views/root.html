@@ -1,19 +1,17 @@
 
 <div id="app-root" ng-class="{ 'panel-active' : panel }">
 	<header id="app-header">
-		<div class="header-logo-wrap">
-			<a href="#/catalog/">
-				<img id="logo" src="/images/logo-color.svg" />
-			</a>
-		</div>
+		<a class="header-logo-wrap" href="#/catalog/">
+			<img id="logo" src="/images/logo-color.svg" />
+		</a>
 		<div class="header-ui-wrap">
 			<a class="count-wrap" href="#/cart">
 				<span class="glyphicon glyphicon-shopping-cart"></span>
 				<span class="badge count">{{ count }}</span>
 			</a>
-			<a href="#/wishlist" class="wish glyphicon glyphicon-heart-empty"></a>
-			<a href="#/search" class="search glyphicon glyphicon-search"></a>
-			<span class="btn glyphicon glyphicon-th" ng-click="panel = !panel"></span>
+			<!--<a href="#/wishlist" class="wish glyphicon glyphicon-heart-empty"></a>
+			<a href="#/search" class="search glyphicon glyphicon-search"></a>-->
+			<span class="glyphicon glyphicon-th" ng-click="panel = !panel"></span>
 
 		</div>
 	</header>
@@ -22,6 +20,25 @@
 			<div id="app-view" ui-view></div>
 		</div>
 		<div id="menu-panel" class="app-panel panel-bottom">
+			<form class="search-bar" ng-submit="panelSearch()">
+				<div class="product-search input-group">
+					<input type="text" class="form-control" placeholder="Search" ng-model="panelQuery">
+					<span class="input-group-btn">
+						<button class="btn btn-success btn-search" type="button" ng-click="panelSearch()">
+							<span class="glyphicon glyphicon-search"></span>
+						</button>
+					</span>
+				</div>
+			</form>
+			<div class="core-links">
+				<a class="cart-link" ng-click="panelClick('#/cart')">
+					Cart
+				</a>
+				<a class="wishlist-link" ng-click="panelClick('#/wishlist')">
+					Wishlist
+				</a>
+
+			</div>
 			<accordion close-others="true" id="cat-panel">
 				<accordion-group heading="{{m.title}}" is-open="$first" ng-repeat="m in menu">
 					<div class="catalog-grid">

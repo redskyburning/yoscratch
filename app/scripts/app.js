@@ -61,6 +61,11 @@ angular
                 url: '/search',
                 templateUrl: 'views/search.html',
                 controller: 'SearchCtrl'
+            })
+            .state('root.searchQuery', {
+                url: '/search/:query',
+                templateUrl: 'views/search.html',
+                controller: 'SearchCtrl'
             });
         $urlRouterProvider.otherwise('/');
     });

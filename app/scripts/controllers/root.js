@@ -35,4 +35,17 @@ angular.module('yoscratchApp')
             return menuService.getCatsFromChildren(children);
         };
 
+        $scope.panelClick = function(hash){
+            window.location.hash = hash;
+            $scope.panel = false;
+        };
+
+        $scope.panelSearch = function(){
+            if(typeof $scope.panelQuery !== 'undefined' && $scope.panelQuery){
+                var hash = '#/search/' + $scope.panelQuery;
+                window.location.hash = hash;
+                $scope.panel = false;
+            }
+        };
+
     }]);

@@ -17,9 +17,14 @@ a, a:hover, a:visited, a:link, a:active {
 	text-decoration: none;
 }
 
+@import "pattern.scss";
+@import "root.scss";
+@import "catalog.scss";
+
 // Cart
 
 .cart-container {
+	background:#fff;
 
 	.category-name {
 		margin-bottom:0;
@@ -79,7 +84,7 @@ a, a:hover, a:visited, a:link, a:active {
 
 		.product-image {
 			flex:0 0 auto;
-			height:15rem;
+			height:10rem;
 			//padding-right: 1rem;
 			padding-left:$uiPad;
 
@@ -138,7 +143,3 @@ a, a:hover, a:visited, a:link, a:active {
 	font-size:1.25em;
 	line-height:1.43em;
 }
-
-@import "pattern.scss";
-@import "root.scss";
-@import "catalog.scss";

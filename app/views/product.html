@@ -1,4 +1,7 @@
 <section class="root-container product-container">
+	<h1 class="category-name">
+		{{ product.name }}
+	</h1>
 	<div  class="product-gallery">
 		<carousel interval="-1">
 			<slide ng-repeat="i in images" active="i.active">
@@ -11,9 +14,9 @@
 
 	</div>
 
-	<h1 class="product-name">
+	<!--<h1 class="product-name">
 		{{ product.name }}
-	</h1>
+	</h1>-->
 
 	<div class="product-detail">
 		<div class="product-add input-group">

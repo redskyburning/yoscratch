@@ -63,6 +63,7 @@
 	//border-bottom:$fatBorder solid #000;
 	box-shadow:0 .4rem 1.5rem $shadowColor;
 	text-align:center;
+	border-bottom:$fatBorder solid #000;
 
 	.h-link {
 		display:flex;
@@ -83,7 +84,7 @@
 	background:#fff;
 
 	.product-gallery {
-		height:40rem;
+		height:30rem;
 		background:#eee;
 
 		.carousel, .carousel-inner, .item {
@@ -122,18 +123,21 @@
 
 			li {
 				background:#666;
-				opacity:.6;
 				border:none;
-				border:1px solid #999;
 				margin:0 3px;
 				width:1rem;
 				height:1rem;
 
 				&.active {
-					opacity:.9;
+					background:#000;
 				}
 			}
 		}
+	}
+
+	.category-name {
+		font-size:2.5rem;
+		line-height:1.43em;
 	}
 
 	.product-name {
@@ -155,6 +159,7 @@
 	.product-detail {
 		background:#fff;
 		padding:$uiPad;
+		border-top:$fatBorder solid #000;
 
 		> *:not(:last-child) {
 			margin-bottom:1.5rem;
@@ -178,6 +183,11 @@
 
 	.product-description {
 		text-align:justify;
+
+		a {
+			font-weight:bold;
+			text-decoration: underline;
+		}
 	}
 
 }

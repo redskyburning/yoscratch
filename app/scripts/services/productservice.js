@@ -33,6 +33,7 @@ angular.module('yoscratchApp')
 
         this.getProduct = function(id){
             var p = catalogService.products[id];
+            p.price = Number(p.price);
             return p;
         };
 
