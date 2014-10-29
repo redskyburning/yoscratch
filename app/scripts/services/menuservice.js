@@ -132,7 +132,6 @@ angular.module('yoscratchApp')
                 c.name = v.title;
                 cats.push(c);
             });
-            console.log('cats',cats);
             return cats;
         };
     }]);

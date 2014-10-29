@@ -135,6 +135,8 @@ a, a:hover, a:visited, a:link, a:active {
 .empty-message {
 	padding:$uiPad;
 	text-align: center;
+	font-size:1.25em;
+	line-height:1.43em;
 }
 
 @import "pattern.scss";

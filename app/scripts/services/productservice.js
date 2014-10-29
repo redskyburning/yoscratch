@@ -20,7 +20,6 @@ angular.module('yoscratchApp')
                     products.push(p);
                 }
             });
-            console.log(products);
             return products;
         };
 
@@ -56,7 +55,6 @@ angular.module('yoscratchApp')
                 'image'         : product.mediaGallery.images[0]['450x682'],
                 'price'         : Number(product.price)
             };
-            console.log('data',product);
             return data;
         };
     }]);

@@ -180,3 +180,18 @@
 	}
 
 }
+
+// Search
+
+.search-container {
+	.category-name {
+		text-align:center;
+	}
+
+	.search-bar {
+		background:#fff;
+		padding:$uiPad * .75 $uiPad;
+		box-shadow:0 .4rem 1.5rem $shadowColor;
+		position:relative;
+	}
+}

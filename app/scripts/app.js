@@ -50,6 +50,11 @@ angular
                 url: 'wishlist',
                 templateUrl: 'views/wishlist.html',
                 controller: 'WishlistCtrl'
+            })
+            .state('root.search', {
+                url: 'search',
+                templateUrl: 'views/search.html',
+                controller: 'SearchCtrl'
             });
     });
 
