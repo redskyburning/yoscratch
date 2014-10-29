@@ -6,7 +6,10 @@
 		</a>
 		<span class="h-link" ng-show="isRoot">Catalog</span>
 	</h1>
-	<div class="catalog-grid">
+	<div class="catalog-grid" ng-if="subs.length > 0">
 		<category-item sd-cat="s" ng-repeat="s in subs" />
+	</div>
+	<div class="empty-message" ng-if="subs.length == 0">
+		No categories Here. Trying looking somewhere else.
 	</div>
 </section>

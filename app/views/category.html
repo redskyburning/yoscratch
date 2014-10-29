@@ -5,8 +5,11 @@
 			<span>{{ cat.name }}&nbsp;</span>
 		</a>
 	</h1>
-
-	<div class="catalog-grid">
+	<div class="catalog-grid" ng-if="products.length > 0">
 		<product-item sd-product="p" ng-repeat="p in products" />
 	</div>
+	<div class="empty-message" ng-if="products.length == 0">
+		No Products Here. Trying looking somewhere else.
+	</div>
 </section>
+

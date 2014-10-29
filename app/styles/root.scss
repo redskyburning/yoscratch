@@ -15,7 +15,6 @@ html, body, #app-wrap, #app-root, #app-view, .root-container {
 	position:relative;
 	flex:1 1 auto;
 	overflow:hidden;
-	background:#eee;
 }
 
 #app-content {
@@ -204,4 +203,5 @@ html, body, #app-wrap, #app-root, #app-view, .root-container {
 	font-family:$proxima;
 	font-size:1.6rem;
 	line-height:1.43em;
+	background:#fff;
 }
