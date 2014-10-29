@@ -1,0 +1,40 @@
+@import "fonts.scss";
+@import "vars.scss";
+
+// Media
+.sd-media {
+	display:flex;
+	align-items:stretch;
+	justify-content:space-between;
+
+	.media-image {
+
+		img {
+			width:100%;
+			height:auto;
+		}
+	}
+
+	.media-body {
+		flex:1 1 auto;
+		display:flex;
+		flex-direction:column;
+		justify-content:space-between;
+		align-items:stretch;
+	}
+
+	&.sd-media-horizontal {
+
+		.media-image {
+			flex:1 1 auto;
+			max-width:50%;
+		}
+	}
+
+	&.sd-media-vertical {
+		flex-direction:column;
+
+		.media-image {
+		}
+	}
+}

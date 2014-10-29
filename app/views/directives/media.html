@@ -1,0 +1,16 @@
+<a ng-href="{{ url }}" class="sd-media {{ class }}" >
+	<figure class="media-image">
+		<img width="{{ width }}px" height="{{ height }}px" ng-src="{{ image|prodize }}" />
+		<figcaption ng-if="caption">
+			{{ caption }}
+		</figcaption>
+	</figure>
+	<div class="media-body" ng-if="name || body">
+		<div class="media-title" ng-if="name">
+			{{ name }}
+		</div>
+		<div class="media-body" ng-if="body">
+			{{ body }}
+		</div>
+	</div>
+</a>

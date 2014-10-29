@@ -6,14 +6,7 @@
 		</a>
 		<span class="h-link" ng-show="isRoot">Catalog</span>
 	</h1>
-	<div class="product-list">
-		<a ng-href="{{ getCatUrl(p) }}" class="product-list-item" ng-repeat="p in subs">
-			<div class="pli-image">
-				<img width="450px" height="682px" ng-src="{{ p.image|prodize }}" />
-			</div>
-			<div class="pli-name">
-				<div>{{ p.name }}</div>
-			</div>
-		</a>
+	<div class="catalog-grid">
+		<category-item sd-product="s" ng-repeat="s in subs" />
 	</div>
 </section>
