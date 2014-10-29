@@ -8,6 +8,7 @@
 	flex-wrap:wrap;
 	align-items:stretch;
 	justify-content:space-between;
+	padding-bottom:$uiPad;
 
 	.grid-item {
 		$shadow:0 5px 10px $shadowColor;

@@ -76,6 +76,7 @@ html, body, #app-wrap, #app-root, #app-view, .root-container {
 }
 
 #cat-panel {
+	// Mini Reset
 	.panel-group {
 		.panel {
 			border-radius:0;
@@ -86,11 +87,22 @@ html, body, #app-wrap, #app-root, #app-view, .root-container {
 				background: none;
 				border:none;
 				padding:0;
+			}
 
+			.panel-body {
+				border:none;
+				padding:0;
+			}
+		}
+	}
+
+	// Panel Style
+	.panel-group {
+		.panel {
+			.panel-heading {
 				.panel-title {
 					font-family:$knockout;
 					text-transform: uppercase;
-					//border-bottom:$fatBorder * 2 solid #000;
 					font-size:2.5rem;
 					line-height: 1em;
 					background:#000;
@@ -100,65 +112,29 @@ html, body, #app-wrap, #app-root, #app-view, .root-container {
 			}
 
 			.panel-body {
-				border:none;
 				border:$thinBorder solid #000;
 				border-bottom-width: $fatBorder;
-				padding:0;
-				padding-top:$listItemPad;
+				//padding:$listItemPad 0;
 			}
 		}
 	}
 
-	ul {
-		list-style: none;
-		padding:0;
-		margin:0;
-	}
+	// Grid override
+	.catalog-grid {
+		$grid-item-max:$listItemMax * .5;
 
-	.menu-subs {
-		display:flex;
-		flex-wrap:wrap;
-		align-items:stretch;
-		justify-content:space-around;
+		.grid-item {
+			flex-basis:$grid-item-max;
 
-		.menu-sub {
-			//width:22%;
-			flex:1 1 $panelItemMax;
-			display:flex;
-			flex-direction:column;
-			align-items:stretch;
-			margin-bottom:$listItemPad;
-		}
+			.media-image {
 
-		.sub-name {
-			text-transform: uppercase;
-			text-align: center;
-			background:rgba(255,255,255,0.7);
-			background:#000;
-			color:#fff;
-			padding:.75rem 1rem;
-			flex-grow:1;
-			display:flex;
-			flex-direction:column;
-			justify-content:center;
-			box-shadow:0 .7rem 3rem $shadowColor;
-		}
+				img {
+					max-width:$grid-item-max;
+				}
+			}
 
-		.sub-image {
-			width:100%;
-			text-align:center;
-			padding-top:7%;
-			padding:0 $listItemPad;
-
-			img {
-				width:100%;
-				max-width: $panelItemMax;
-				padding:1rem;
-				background:#fff;
-				height:auto;
-				border:.4rem solid #000;
-				border-width:$fatBorder .15rem 0;
-				box-shadow:0 .7rem 3rem $shadowColor;
+			.media-body {
+				box-shadow:0 2px 10px 3px $shadowColor;
 			}
 		}
 	}

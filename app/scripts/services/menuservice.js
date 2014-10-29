@@ -8,25 +8,11 @@
  * Service in the yoscratchApp.
  */
 angular.module('yoscratchApp')
-    .service('menuService', ['$resource','$q', function menuService() {
+    .service('menuService', ['categoryService', function menuService(categoryService) {
         var menu = {
             'shop'  : {
                 'title'     : 'Shop',
                 'children'  : [
-                    {
-                        'title'     : 'What\'s New',
-                        'catId'     : 431,
-                        'children'  : [
-                            {
-                                'title'     : 'New Arrivals',
-                                'catId'     : 722
-                            },
-                            {
-                                'title'     : 'Best Sellers',
-                                'catId'     : 716
-                            }
-                        ]
-                    },
                     {
                         'title'     : 'Jewelry',
                         'catId'     : 15,
@@ -36,7 +22,7 @@ angular.module('yoscratchApp')
                                 'catId'     : 16
                             },
                             {
-                                'title'     : 'Charms & Engravables',
+                                'title'     : 'Engravables',
                                 'catId'     : 3080
                             },
                             {
@@ -56,11 +42,11 @@ angular.module('yoscratchApp')
                                 'catId'     : 30
                             },
                             {
-                                'title'     : 'Girls Collection',
+                                'title'     : 'Girls',
                                 'catId'     : 31
                             },
                             {
-                                'title'     : 'Storage & Display',
+                                'title'     : 'Display',
                                 'catId'     : 2946
                             }
                         ]
@@ -88,6 +74,20 @@ angular.module('yoscratchApp')
                             {
                                 'title'     : 'Scarves',
                                 'catId'     : 730
+                            }
+                        ]
+                    },
+                    {
+                        'title'     : 'What\'s New',
+                        'catId'     : 431,
+                        'children'  : [
+                            {
+                                'title'     : 'New Arrivals',
+                                'catId'     : 722
+                            },
+                            {
+                                'title'     : 'Best Sellers',
+                                'catId'     : 716
                             }
                         ]
                     },
@@ -123,5 +123,16 @@ angular.module('yoscratchApp')
 
         this.getMenu = function(){
             return menu;
+        };
+
+        this.getCatsFromChildren = function(children){
+            var cats = [];
+            angular.forEach(children,function(v){
+                var c = categoryService.getCat(v.catId);
+                c.name = v.title;
+                cats.push(c);
+            });
+            console.log('cats',cats);
+            return cats;
         };
     }]);

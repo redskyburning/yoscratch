@@ -16,6 +16,7 @@ angular.module('yoscratchApp')
         var supernav = 'shop';
 
         $scope.menu = menuData[supernav].children;
+        console.log('c',menuData[supernav].children);
 
         $scope.count = 0;
         $scope.addToCart = function(product,quant){
@@ -29,6 +30,10 @@ angular.module('yoscratchApp')
         $scope.getCatImage = function(catId){
             var cat = categoryService.getCat(catId);
             return cat.image;
+        };
+
+        $scope.getCatsFromChildren = function(children){
+            return menuService.getCatsFromChildren(children);
         };
 
     }]);

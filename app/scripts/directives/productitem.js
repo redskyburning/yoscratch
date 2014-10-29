@@ -15,7 +15,7 @@ angular.module('yoscratchApp')
                 sdProduct: '='
             },
             replace     : true,
-            link        : function postLink(scope, element, attrs) {
+            link        : function postLink(scope) {
                 scope.name = scope.sdProduct.name;
                 scope.image = scope.sdProduct.image;
                 scope.width = 450;
