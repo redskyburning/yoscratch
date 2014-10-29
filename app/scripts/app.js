@@ -19,43 +19,50 @@ angular
         'ui.router',
         'ngTouch'
     ])
-    .config(function($stateProvider) {
+    .config(function($stateProvider,$urlRouterProvider) {
         $stateProvider
             .state('root', {
-                url: '/',
+                url: '',
+                abstract: true,
                 templateUrl: 'views/root.html',
                 controller: 'RootCtrl'
             })
             .state('root.catalog', {
-                url: 'catalog/:id',
+                url: '/',
+                templateUrl: 'views/catalog.html',
+                controller: 'CatalogCtrl'
+            })
+            .state('root.catalogId', {
+                url: '/catalog/:id',
                 templateUrl: 'views/catalog.html',
                 controller: 'CatalogCtrl'
             })
             .state('root.category', {
-                url: 'category/:id',
+                url: '/category/:id',
                 templateUrl: 'views/category.html',
                 controller: 'CategoryCtrl'
             })
             .state('root.product', {
-                url: 'product/:id',
+                url: '/product/:id',
                 templateUrl: 'views/product.html',
                 controller: 'ProductCtrl'
             })
             .state('root.cart', {
-                url: 'cart',
+                url: '/cart',
                 templateUrl: 'views/cart.html',
                 controller: 'CartCtrl'
             })
             .state('root.wish', {
-                url: 'wishlist',
+                url: '/wishlist',
                 templateUrl: 'views/wishlist.html',
                 controller: 'WishlistCtrl'
             })
             .state('root.search', {
-                url: 'search',
+                url: '/search',
                 templateUrl: 'views/search.html',
                 controller: 'SearchCtrl'
             });
+        $urlRouterProvider.otherwise('/');
     });
 
 angular.element(document).ready(function () {
